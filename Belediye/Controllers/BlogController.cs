@@ -11,7 +11,34 @@ namespace Belediye.Controllers
         // GET: Blog
         public ActionResult Index()
         {
+            ViewBag.Title = "Bloging";
             return View();
         }
+
+        public ActionResult Category()
+        {
+            ViewBag.Title = "Blog";
+            return View();
+        }
+
+        public ActionResult Populer()
+        {
+            ViewBag.Title = "Blog";
+            return View();
+        }
+
+        public ActionResult Tag()
+        {
+            ViewBag.Title = "Blog";
+            return View();
+        }
+
+        public ActionResult Detail()
+        {
+            ViewBag.Title = "Blog";
+            return View();
+        }
+
+
     }
 }

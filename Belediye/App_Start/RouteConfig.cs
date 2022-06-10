@@ -14,17 +14,32 @@ namespace Belediye
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "hakkimizda",
-                defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional }
+                name: "About",
+                url: "hakkimizda", // uzantiyi direk belirtebiliyoruz.
+                defaults: new { controller = "About", action = "Index"}
             );
 
-            // Uzantı belirleme
             routes.MapRoute(
-                name: "About",
+                name: "Blog",
+                url: "blog",
+                defaults: new { controller = "Blog", action = "Index"}
+            );
+
+            routes.MapRoute(
+                name: "Contact",
+                url: "iletisim",
+                defaults: new { controller = "Contact", action = "Index" }
+            );
+
+            // Uzantı belirleme  Bu EN ALTTA OLMAZSA DİĞERLERİNİ DE OTOMATİK AYARLIYOR.
+            routes.MapRoute(
+                name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+
+
         }
     }
 }
